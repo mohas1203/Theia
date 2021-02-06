@@ -12,6 +12,7 @@
     display: flex;
     justify-content: center;
 }
+
 .blue {
     color: #3b54a4;
 }
@@ -42,16 +43,42 @@
     font-size: 20px;
     border: white solid 3px;
     border-radius: 40px;
+    outline: none;
     height: 50px;
     width: 200px;
 }
 
+.getStarted:hover {
+    background-color: white;
+    color: black;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
 
+/* Landing page Content */
 
+.content {
+    margin-top: 100px;
+    margin-bottom: 200px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-left: 40px;
+    padding-right: 40px;
+    
+}
+
+.content:hover {
+    background-color: white;
+    color: black;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.cardText {
+    margin-top: 20px;
+}
 
 /* Animations */
 .fade-Up {
-    animation: fadeUp 5s;
+    animation: fadeUp 3s;
   }
   
 @keyframes fadeUp {
@@ -66,7 +93,7 @@
 } 
 
 .fade-Down {
-    animation: fadeDown 5s;
+    animation: fadeDown 3s;
   }
   
 @keyframes fadeDown {

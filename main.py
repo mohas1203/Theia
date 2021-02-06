@@ -10,7 +10,7 @@ def home():
 
 @app.route("/Identify")
 def Identify():
-    return render_template("about.html")
+    return render_template("identify.html")
 
 
 if __name__ == "__main__":

@@ -1,11 +1,22 @@
 {% extends "base.html" %}
 {% block title %}Theia{% endblock %}
-{% block content %}
+{% block landing %}
 <div class="landing">
     <h1 class="display-2 landingHeading fade-Down poppins">Welcome to <span class="blue">Theia</span></h1>
     <br>
     <h2 class="text-muted poppins fade-Up landingSubheader">Helping Others See The World, <em>Crystal Clear</em></h2>
     <br>
-    <button type="button" class="getStarted fade-Up">Get Started</button>
+    <a href="/Identify"><button type="button" class="getStarted fade-Up">Get Started</button></a>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="card content">
+    <div class="card-body">
+        <h1 class="card-title text-center poppins cardTitle">What is Theia?</h5>
+        <div class="cardText">
+            <p class="card-text poppins">Theia is a tool kit designed for optometrist to identify ocular diseases based off of ophthalmic images.</p> 
+        </div>
+    </div>
 </div>
 {% endblock %}

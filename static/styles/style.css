@@ -132,7 +132,7 @@ body {
 #identify {
     text-align: center;
     width: 100%;
-    padding-top: 50px;
+    padding-top: 30px;
     padding-bottom: 100px;
 }
 
@@ -141,6 +141,14 @@ body {
     margin-top: 20px;
 }
 
+#resultDiv {
+    text-align: center;
+    width: 100%;
+}
+
+#result {
+    margin-top: 10px;
+}
 
 /* Animations */
 .fade-Up {
@@ -188,3 +196,17 @@ body {
     }
 } 
 
+.fade-Right {
+    animation: fadeRight 3s;
+  }
+  
+@keyframes fadeRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

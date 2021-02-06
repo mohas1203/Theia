@@ -1,3 +1,24 @@
 {% extends "base.html" %}
 {% block title %}About{% endblock %}
-{% block content %}<h1 class="display-2">Identify Ocular Diseases...</h1>{% endblock %}
+{% block content %}
+<div id="identify">
+    <h1 class="display-2 landingHeading fade-Down poppins">Identify Ocular Diseases...</h1> 
+    <br>
+    <h2 class="text-muted poppins fade-Up landingSubheader">Select An Image to Get Started</h2>
+</div>
+{% endblock %}
+
+{% block contentTwo %}
+<div class="predictSection fade-Left">
+    <div class="custom-upload-div">
+        <label for="file-field" class="custom-file-upload">
+            Custom Upload
+        </label> 
+        <button class="getStarted" onclick="run()">Predict</button>
+    </div>
+    <input type="file" id="file-field" onchange="previewImage(event)" class="title" hidden>   
+    <img src="{{ url_for('static', filename='images/upload.png')}}" id="image-field" crossorigin="anonymous" width="512px" height="512px" alt="Image Preview">
+
+    <h1 id="result">Results</h1>
+</div>
+{% endblock %}

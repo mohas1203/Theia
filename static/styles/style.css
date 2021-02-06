@@ -49,7 +49,7 @@ body {
     border: white solid 3px;
     border-radius: 40px;
     outline: none;
-    height: 50px;
+    height: 55px;
     width: 200px;
 }
 
@@ -87,7 +87,60 @@ body {
 
 .cardText li{
     font-size: 20px;
+    margin-bottom: 30px;
+
 }
+
+.check-list{
+    list-style-image: url("../images/check.png");
+}
+
+/* Identify */
+
+.custom-file-upload {
+    text-align: center;
+    position: static;
+    position: relative;
+    font-size: 20px;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #3b54a4;
+    border-radius: 50px;
+    color: white;
+    cursor: pointer;
+    border: 3px solid white;
+    
+}
+
+
+.custom-file-upload:hover{
+    background-color: white;
+    color: black;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+
+.custom-upload-div{
+    text-align: center;
+    width: 100%;
+
+}
+
+
+#identify {
+    text-align: center;
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+#image-field{
+    border-radius: 30px;
+    margin-top: 20px;
+}
+
 
 /* Animations */
 .fade-Up {
@@ -110,13 +163,28 @@ body {
   }
   
 @keyframes fadeDown {
-0% {
-    opacity: 0;
-    transform: translateY(-50px);
-}
-100% {
-    opacity: 1;
-    transform: translateY(0);
-}
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} 
+
+.fade-Left {
+    animation: fadeLeft 3s;
+  }
+  
+@keyframes fadeLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 } 
 

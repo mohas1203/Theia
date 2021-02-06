@@ -7,3 +7,76 @@
     margin-left: 15px;
 
 }
+
+.contentDiv{
+    display: flex;
+    justify-content: center;
+}
+.blue {
+    color: #3b54a4;
+}
+
+/* Landing Page Styles */
+.landing{
+    text-align: center;
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 200px;
+    background-image: url("/static/images/landingBackground.jpg");
+    background-size: cover;
+}
+
+.landingHeading{
+    margin-top: 100px;
+    font-weight: 400;
+}
+
+.landingSubheader{
+    font-size: 25px;
+}
+
+.getStarted{
+    font-family: 'Poppins', sans-serif;
+    background-color: #3b54a4;
+    color: #FFFF;
+    font-size: 20px;
+    border: white solid 3px;
+    border-radius: 40px;
+    height: 50px;
+    width: 200px;
+}
+
+
+
+
+/* Animations */
+.fade-Up {
+    animation: fadeUp 5s;
+  }
+  
+@keyframes fadeUp {
+0% {
+    opacity: 0;
+    transform: translateY(50px);
+}
+100% {
+    opacity: 1;
+    transform: translateY(0);
+}
+} 
+
+.fade-Down {
+    animation: fadeDown 5s;
+  }
+  
+@keyframes fadeDown {
+0% {
+    opacity: 0;
+    transform: translateY(-50px);
+}
+100% {
+    opacity: 1;
+    transform: translateY(0);
+}
+} 
+

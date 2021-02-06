@@ -9,26 +9,26 @@
 {% endblock %}
 
 {% block contentTwo %}
-<div class="predictSection fade-Left">
+<div class="predictSection">
     <div class="custom-upload-div">
-        <label for="file-field" class="custom-file-upload">
+        <label for="file-field" class="custom-file-upload fade-Left">
             Custom Upload
         </label> 
-        <button class="getStarted" onclick="run()">Predict</button>
+        <button class="getStarted fade-Right" onclick="run()">Predict</button>
         <input type="file" id="file-field" onchange="previewImage(event)" class="title" hidden>  
     </div>
-    <img src="{{ url_for('static', filename='images/upload.png')}}" id="image-field" crossorigin="anonymous" width="512px" height="512px" alt="Image Preview">
-    <div id="chartDiv">
+    <img src="{{ url_for('static', filename='images/upload.png')}}" class="fade-Up" id="image-field" crossorigin="anonymous" width="512px" height="512px" alt="Image Preview" >
+    <div id="chartDiv" data-aos="fade-left" data-aos-duration="2000">
         <canvas id="myChart" width="400" height="400"></canvas>
     </div>
+    <div id="resultDiv">
+        <h1 id="result" data-aos="fade-right" data-aos-duration="2000">Results</h1>
+    </div>
 </div>
+
+
 {% endblock %}
 
-{% block contentThree %}
-<div id="result" class="fade-Right">
-    <h1 id="result">Results</h1>
-</div>
-{% endblock %}
 
 {% block script %}
 <script>
@@ -38,7 +38,7 @@ var myBarChart = new Chart(ctx, {
     data: {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
         datasets: [{
-            label: 'Ocular Disease Predictions',
+            label: "Ocular Disease Prediction",
             data: [12, 19, 3, 5, 2, 3],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
@@ -59,7 +59,16 @@ var myBarChart = new Chart(ctx, {
             borderWidth: 1
         }]
     },
-    options: {}
+    options: {
+        animation: {
+            duration: 3000 // general animation time
+        },
+        legend: {
+            labels: {
+            boxWidth: 0,
+            }
+        }
+    }
 });
 </script>
 {% endblock %}

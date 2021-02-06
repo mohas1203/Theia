@@ -150,6 +150,10 @@ body {
     margin-top: 10px;
 }
 
+#chartDiv{
+    margin-top: 50px;
+}
+
 /* Animations */
 .fade-Up {
     animation: fadeUp 3s;

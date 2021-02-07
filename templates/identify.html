@@ -19,10 +19,7 @@
     </div>
     <img src="{{ url_for('static', filename='images/upload.png')}}" class="fade-Up" id="image-field" crossorigin="anonymous" width="512px" height="512px" alt="Image Preview" >
     <div id="chartDiv" data-aos="fade-left" data-aos-duration="2000">
-        <canvas id="myChart" width="400" height="400"></canvas>
-    </div>
-    <div id="resultDiv">
-        <h1 id="result" data-aos="fade-right" data-aos-duration="2000">Results</h1>
+        <canvas id="myChart" width="500" height="500"></canvas>
     </div>
 </div>
 
@@ -42,6 +39,9 @@ let myopia;
 let normal;
 let other;
 let finalArr;
+let highestLabel;
+let highestVal;
+let highestValRounded;
 
 async function run() {
 	// Predict Function
@@ -64,15 +64,31 @@ async function run() {
         other = d[7] * 100;
         finalArr = [armd, cataract, diabetes, glaucoma, hypertension, myopia, normal, other]
         console.log(finalArr)
-        let highestVal = Math.max(armd, cataract, diabetes, glaucoma, hypertension, myopia, normal, other)
-        
-
+        highestVal = Math.max(armd, cataract, diabetes, glaucoma, hypertension, myopia, normal, other)
+        highestValRounded = Math.ceil(highestVal)
+        if (highestVal === armd){
+            highestLabel = "is diagnosed Macular Degeneration"
+        } else if (highestVal === cataract){
+            highestLabel = "is diagnosed Cataract"
+        } else if (highestVal === diabetes){
+            highestLabel = "is diagnosed Diabetic retinopathy"
+        } else if (highestVal === glaucoma){
+            highestLabel = "is diagnosed Glaucoma"
+        } else if (highestVal === hypertension){
+            highestLabel = "is diagnosed Hypertension"
+        } else if (highestVal === myopia){
+            highestLabel = "is diagnosed Pathological Myopia "
+        } else if (highestVal === normal){
+            highestLabel = "is normal"
+        } else if (highestVal === other){
+            highestLabel = "might be diagnosed with another manifestation"
+        }
 
         var ctx = document.getElementById('myChart');
         var myBarChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['Macular Degeneration', 'Cataract ', 'Diabetes', 'Glaucoma', 'Hypertension', 'Pathological Myopia', 'Normal', 'Other diseases'],
+                labels: ['Macular Degeneration', 'Cataract ', 'Diabetic retinopathy', 'Glaucoma', 'Hypertension', 'Pathological Myopia', 'Normal', 'Other diseases'],
                 datasets: [{
                     label: "Ocular Disease Prediction",
                     data: finalArr,
@@ -119,9 +135,8 @@ async function run() {
         });
     });
 
-    document.getElementById("result").innerHTML = `This patient has tuberculosis! (Predicted with ${tuberculosis}% accuracy)
 
-}
+};
 
 </script>
 {% endblock %}

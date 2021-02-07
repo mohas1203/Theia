@@ -85,7 +85,9 @@ async function run() {
         }
 
         var ctx = document.getElementById('myChart');
-        var myBarChart = new Chart(ctx, {
+        if(window.bar != undefined) 
+        window.bar.destroy(); 
+        window.bar = new Chart(ctx, {
             type: 'bar',
             data: {
                 labels: ['Macular Degeneration', 'Cataract ', 'Diabetic retinopathy', 'Glaucoma', 'Hypertension', 'Pathological Myopia', 'Normal', 'Other diseases'],

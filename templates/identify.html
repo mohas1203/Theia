@@ -32,6 +32,23 @@
 
 {% block script %}
 <script>
+
+async function run() {
+	// Predict Function
+	const model = await tf.loadGraphModel('static/theiamodel/model.json');
+	const image = document.getElementById('image-field');
+    let tensor = tf.browser.fromPixels(image, 3)
+		.resizeNearestNeighbor([224, 224]) // change the image size
+		.expandDims()
+		.toFloat()
+		.reverse(-1);
+	const prediction = model.predict(tensor).data();
+	console.log(prediction)
+    let array = Array.from(prediction)
+    console.log(array)
+}
+
+
 var ctx = document.getElementById('myChart');
 var myBarChart = new Chart(ctx, {
     type: 'bar',
